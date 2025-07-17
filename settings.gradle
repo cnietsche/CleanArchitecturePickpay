@@ -1,1 +1,5 @@
 rootProject.name = 'CleanArchitecturePickpay'
+include 'core'
+include 'usecase'
+include 'application'
+include 'infrastructure'
