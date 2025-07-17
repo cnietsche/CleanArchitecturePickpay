@@ -2,7 +2,9 @@ package br.com.cnietsche.core.exception.enums;
 
 public enum ErrorCodeEnum {
 
-    ON0001("Invalid Tax Number", "ON-0001"),
+    ON0001("Invalid tax number", "ON-0001"),
+    ON0002("Unavailable tax number", "ON-0002"),
+    ON0003("Unavailable email", "ON-0003"),
     TR0001("Transfers are not allowed for shopkeeper users", "TR-0001"),
     TR0002("Insufficient balance", "TR-0002"),
     TP0001("Invalid PIN", "TP-0001")
