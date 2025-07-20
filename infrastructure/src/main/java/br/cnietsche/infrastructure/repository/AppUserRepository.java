@@ -8,4 +8,8 @@ import java.util.UUID;
 
 @Repository
 public interface AppUserRepository extends JpaRepository<AppUser, UUID> {
+
+    Boolean existsByTaxNumber(String taxNumber);
+
+    Boolean existsByEmail(String email);
 }

@@ -13,7 +13,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Wallet {
+public class AppWallet {
 
     @Column(name = "ID")
     @Id
@@ -29,11 +29,19 @@ public class Wallet {
 
     @OneToOne
     @JoinColumn(name = "TRANSACTION_PIN_ID")
-    private TransactionPin transactionPin;
+    private AppTransactionPin appTransactionPin;
 
     @Column(name = "CREATED_AT", nullable = false)
     private LocalDateTime createdAt;
 
     @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
+
+    public AppWallet(BigDecimal balance, AppUser appUser, AppTransactionPin appTransactionPin, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.balance = balance;
+        this.appUser = appUser;
+        this.appTransactionPin = appTransactionPin;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }

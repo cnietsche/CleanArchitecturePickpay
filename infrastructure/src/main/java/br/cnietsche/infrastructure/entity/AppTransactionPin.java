@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class TransactionPin {
+public class AppTransactionPin {
 
     @Column(name = "ID")
     @Id
@@ -33,4 +33,12 @@ public class TransactionPin {
 
     @Column(name = "UPDATED_AT")
     private LocalDateTime updatedAt;
+
+    public AppTransactionPin(String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updatedAt) {
+        this.pin = pin;
+        this.attempt = attempt;
+        this.blocked = blocked;
+        this.createdAt = createdAt;
+        this.updatedAt = updatedAt;
+    }
 }

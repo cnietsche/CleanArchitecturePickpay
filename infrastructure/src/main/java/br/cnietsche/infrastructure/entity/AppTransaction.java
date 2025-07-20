@@ -23,11 +23,11 @@ public class AppTransaction {
 
     @ManyToOne
     @JoinColumn(name = "FROM_WALLET", nullable = false)
-    private Wallet fromWallet;
+    private AppWallet fromWallet;
 
     @ManyToOne
     @JoinColumn(name = "TO_WALLET", nullable = false)
-    private Wallet toWallet;
+    private AppWallet toWallet;
 
     @Column(name = "TRANSACTION_VALUE", nullable = false)
     private BigDecimal transactionValue;
