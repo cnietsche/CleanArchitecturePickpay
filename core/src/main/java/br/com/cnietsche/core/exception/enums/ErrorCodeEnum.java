@@ -14,7 +14,8 @@ public enum ErrorCodeEnum {
     TP0001("Invalid PIN", "TP-0001"),
     WA0001("Wallet not found", "WA-0001"),
     NO0001("There was an error during the user notification", "NO-0001"),
-    PN0001("Bloked transaction PIN", "PN-0001")
+    PN0001("Bloked transaction PIN", "PN-0001"),
+    PN0002("Incorrect PIN, %d attempt(s) left", "PN-0002")
     ;
 
     private String message;
@@ -39,5 +40,9 @@ public enum ErrorCodeEnum {
 
     public void setCode(String code) {
         this.code = code;
+    }
+
+    public static String getPN0002Message(Integer attempt) {
+        return String.format(PN0002.getMessage(), attempt);
     }
 }

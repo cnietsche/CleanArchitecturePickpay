@@ -1,9 +1,10 @@
 package br.com.cnietsche.usecase;
 
 import br.com.cnietsche.core.domain.TransactionPin;
+import br.com.cnietsche.core.exception.PinException;
 import br.com.cnietsche.core.exception.TransferException;
 
 public interface TransactionPinValidateUseCase {
 
-    Boolean validate(TransactionPin transactionPin) throws TransferException;
+    Boolean validate(TransactionPin transactionPin) throws TransferException, PinException;
 }
