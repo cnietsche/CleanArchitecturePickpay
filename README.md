@@ -1,0 +1,1 @@
+Seguindo aula de arquitetura limpa da playlist de [Youtube - Daniel Santos | Dev](https://www.youtube.com/@DanielSantosDevECC) - [Curso Arquitetura Limpa com Java](https://youtube.com/playlist?list=PLUOqm1GRyVXaJG29--_tYtO8AkMChovx1&si=Yy8EnPtfy6917dCK)
