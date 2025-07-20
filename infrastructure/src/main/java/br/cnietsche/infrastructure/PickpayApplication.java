@@ -1,4 +1,4 @@
-package br.cnietsche;
+package br.cnietsche.infrastructure;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

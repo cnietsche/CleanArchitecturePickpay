@@ -1,4 +1,4 @@
-package br.cnietsche.entity;
+package br.cnietsche.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

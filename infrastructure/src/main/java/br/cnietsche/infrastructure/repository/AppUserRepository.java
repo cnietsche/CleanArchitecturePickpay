@@ -1,6 +1,6 @@
-package br.cnietsche.repository;
+package br.cnietsche.infrastructure.repository;
 
-import br.cnietsche.entity.AppUser;
+import br.cnietsche.infrastructure.entity.AppUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

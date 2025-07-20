@@ -1,4 +1,4 @@
-package br.cnietsche.entity;
+package br.cnietsche.infrastructure.entity;
 
 import br.com.cnietsche.core.domain.enums.UserTypeEnum;
 import jakarta.persistence.*;
