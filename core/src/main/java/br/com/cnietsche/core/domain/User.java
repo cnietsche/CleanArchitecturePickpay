@@ -14,30 +14,27 @@ public class User {
     private TaxNumber taxNumber;
     private String fullName;
     private UserTypeEnum type;
-    private TransactionPin transactionPin;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public User() {
     }
 
-    public User(String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type, TransactionPin transactionPin) {
+    public User(String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type) {
         this.email = email;
         this.password = password;
         this.taxNumber = taxNumber;
         this.fullName = fullName;
         this.type = type;
-        this.transactionPin = transactionPin;
     }
 
-    public User(UUID id, String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type, TransactionPin transactionPin, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public User(UUID id, String email, String password, TaxNumber taxNumber, String fullName, UserTypeEnum type, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.email = email;
         this.password = password;
         this.taxNumber = taxNumber;
         this.fullName = fullName;
         this.type = type;
-        this.transactionPin = transactionPin;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
     }
@@ -90,14 +87,6 @@ public class User {
         this.type = type;
     }
 
-    public TransactionPin getTransactionPin() {
-        return transactionPin;
-    }
-
-    public void setTransactionPin(TransactionPin transactionPin) {
-        this.transactionPin = transactionPin;
-    }
-
     public LocalDateTime getCreatedAt() {
         return createdAt;
     }
@@ -115,7 +104,7 @@ public class User {
         if (o == null || getClass() != o.getClass()) return false;
 
         User user = (User) o;
-        return id.equals(user.id) && email.equals(user.email) && password.equals(user.password) && taxNumber.equals(user.taxNumber) && fullName.equals(user.fullName) && type == user.type && transactionPin.equals(user.transactionPin) && createdAt.equals(user.createdAt) && Objects.equals(updatedAt, user.updatedAt);
+        return id.equals(user.id) && email.equals(user.email) && password.equals(user.password) && taxNumber.equals(user.taxNumber) && fullName.equals(user.fullName) && type == user.type && createdAt.equals(user.createdAt) && Objects.equals(updatedAt, user.updatedAt);
     }
 
     @Override
@@ -126,7 +115,6 @@ public class User {
         result = 31 * result + taxNumber.hashCode();
         result = 31 * result + fullName.hashCode();
         result = 31 * result + type.hashCode();
-        result = 31 * result + transactionPin.hashCode();
         result = 31 * result + createdAt.hashCode();
         result = 31 * result + Objects.hashCode(updatedAt);
         return result;
