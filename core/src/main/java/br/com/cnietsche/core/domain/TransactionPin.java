@@ -9,7 +9,6 @@ import java.util.UUID;
 public class TransactionPin {
 
     private UUID id;
-    private User user;
     private String pin;
     private Integer attempt;
     private Boolean blocked;
@@ -19,17 +18,15 @@ public class TransactionPin {
     public TransactionPin() {
     }
 
-    public TransactionPin(User user, String pin) throws TransactionPinException {
-        this.user = user;
+    public TransactionPin(String pin) throws TransactionPinException {
         setPin(pin);
         this.attempt = 3;
         this.blocked = false;
         this.createdAt = LocalDateTime.now();
     }
 
-    public TransactionPin(UUID id, User user, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public TransactionPin(UUID id, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
-        this.user = user;
         this.pin = pin;
         this.attempt = attempt;
         this.blocked = blocked;
@@ -43,14 +40,6 @@ public class TransactionPin {
 
     public void setId(UUID id) {
         this.id = id;
-    }
-
-    public User getUser() {
-        return user;
-    }
-
-    public void setUser(User user) {
-        this.user = user;
     }
 
     public String getPin() {

@@ -6,11 +6,13 @@ import br.com.cnietsche.core.exception.enums.ErrorCodeEnum;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.Objects;
 import java.util.UUID;
 
 public class Wallet {
 
     private UUID id;
+    private TransactionPin transactionPin;
     private BigDecimal balance;
     private User user;
     private LocalDateTime createdAt;
@@ -19,14 +21,16 @@ public class Wallet {
     public Wallet() {
     }
 
-    public Wallet(BigDecimal balance, User user) {
+    public Wallet(TransactionPin transactionPin, BigDecimal balance, User user) {
+        this.transactionPin = transactionPin;
         this.balance = balance;
         this.user = user;
         this.createdAt = LocalDateTime.now();
     }
 
-    public Wallet(UUID id, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Wallet(UUID id, TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
+        this.transactionPin = transactionPin;
         this.balance = balance;
         this.user = user;
         this.createdAt = createdAt;
@@ -39,6 +43,14 @@ public class Wallet {
 
     public void setId(UUID id) {
         this.id = id;
+    }
+
+    public TransactionPin getTransactionPin() {
+        return transactionPin;
+    }
+
+    public void setTransactionPin(TransactionPin transactionPin) {
+        this.transactionPin = transactionPin;
     }
 
     public BigDecimal getBalance() {
@@ -81,5 +93,24 @@ public class Wallet {
 
     public void setUpdatedAt(LocalDateTime updatedAt) {
         this.updatedAt = updatedAt;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Wallet wallet = (Wallet) o;
+        return Objects.equals(id, wallet.id) && transactionPin.equals(wallet.transactionPin) && balance.equals(wallet.balance) && user.equals(wallet.user) && createdAt.equals(wallet.createdAt) && Objects.equals(updatedAt, wallet.updatedAt);
+    }
+
+    @Override
+    public int hashCode() {
+        int result = Objects.hashCode(id);
+        result = 31 * result + transactionPin.hashCode();
+        result = 31 * result + balance.hashCode();
+        result = 31 * result + user.hashCode();
+        result = 31 * result + createdAt.hashCode();
+        result = 31 * result + Objects.hashCode(updatedAt);
+        return result;
     }
 }

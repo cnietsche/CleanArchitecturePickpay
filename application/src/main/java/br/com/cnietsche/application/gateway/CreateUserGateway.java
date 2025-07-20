@@ -8,5 +8,5 @@ import br.com.cnietsche.core.exception.TaxNumberException;
 
 public interface CreateUserGateway {
 
-    Boolean create(User user, Wallet wallet, TransactionPin transactionPin) throws TaxNumberException, EmailException;
+    Boolean create(User user, Wallet wallet) throws TaxNumberException, EmailException;
 }
