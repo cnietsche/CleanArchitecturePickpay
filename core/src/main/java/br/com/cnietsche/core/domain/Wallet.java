@@ -11,7 +11,7 @@ import java.util.UUID;
 
 public class Wallet {
 
-    private UUID id;
+    private Long id;
     private TransactionPin transactionPin;
     private BigDecimal balance;
     private User user;
@@ -28,7 +28,7 @@ public class Wallet {
         this.createdAt = LocalDateTime.now();
     }
 
-    public Wallet(UUID id, TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public Wallet(Long id, TransactionPin transactionPin, BigDecimal balance, User user, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.transactionPin = transactionPin;
         this.balance = balance;
@@ -37,11 +37,11 @@ public class Wallet {
         this.updatedAt = updatedAt;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

@@ -22,6 +22,18 @@ public class UserMapper {
                 user.getUpdatedAt());
     }
 
+    public User toEntity(AppUser appUser) throws TaxNumberException {
+        return new User(
+                appUser.getId(),
+                appUser.getEmail(),
+                appUser.getPassword(),
+                new TaxNumber(appUser.getTaxNumber()),
+                appUser.getFullName(),
+                appUser.getType(),
+                appUser.getCreatedAt(),
+                appUser.getUpdatedAt());
+    }
+
     public User toEntity(CreateUserRequestDTO request) throws TaxNumberException {
         return new User(
                 request.email(),

@@ -12,6 +12,8 @@ import br.com.cnietsche.core.domain.Wallet;
 import br.com.cnietsche.core.exception.EmailException;
 import br.com.cnietsche.core.exception.TaxNumberException;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import static br.cnietsche.infrastructure.utils.Utilities.log;
 
 @Service
@@ -40,6 +42,7 @@ public class CreateUserGatewayImpl implements CreateUserGateway {
     }
 
     @Override
+    @Transactional
     public Boolean create(User user, Wallet wallet) throws TaxNumberException, EmailException {
         try {
             log.info("Start of user creation::CreateUserGatewayImpl");

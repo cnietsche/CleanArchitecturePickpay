@@ -21,3 +21,6 @@ security:
   jwt:
     secret: 0412c946-a382-4be6-9245-ebde9ef911dd
     expiration: 900
+
+client:
+  url: https://mock.apidog.com/m1/1009220-995427-default/authorizate

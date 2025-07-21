@@ -9,5 +9,5 @@ import java.math.BigDecimal;
 public interface TransferUseCase {
 
     Boolean transfer(TaxNumber fromTaxNumber, TaxNumber toTaxNumber, BigDecimal value, String pin)
-            throws InternalServerErrorException, TransferException, NotFoundException, NotificationException, PinException;
+            throws InternalServerErrorException, TransferException, NotFoundException, NotificationException, PinException, TaxNumberException;
 }

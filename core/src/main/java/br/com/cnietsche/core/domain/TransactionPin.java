@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class TransactionPin {
 
-    private UUID id;
+    private Long id;
     private String pin;
     private Integer attempt;
     private Boolean blocked;
@@ -25,7 +25,7 @@ public class TransactionPin {
         this.createdAt = LocalDateTime.now();
     }
 
-    public TransactionPin(UUID id, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updatedAt) {
+    public TransactionPin(Long id, String pin, Integer attempt, Boolean blocked, LocalDateTime createdAt, LocalDateTime updatedAt) {
         this.id = id;
         this.pin = pin;
         this.attempt = attempt;
@@ -34,11 +34,11 @@ public class TransactionPin {
         this.updatedAt = updatedAt;
     }
 
-    public UUID getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(UUID id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

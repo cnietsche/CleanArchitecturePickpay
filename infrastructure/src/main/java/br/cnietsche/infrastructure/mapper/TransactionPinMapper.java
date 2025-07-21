@@ -15,4 +15,14 @@ public class TransactionPinMapper {
                 transactionPin.getCreatedAt(),
                 transactionPin.getUpdatedAt());
     }
+
+    public TransactionPin toEntity(AppTransactionPin appTransactionPin) {
+        return new TransactionPin(
+                appTransactionPin.getId(),
+                appTransactionPin.getPin(),
+                appTransactionPin.getAttempt(),
+                appTransactionPin.getBlocked(),
+                appTransactionPin.getCreatedAt(),
+                appTransactionPin.getUpdatedAt());
+    }
 }

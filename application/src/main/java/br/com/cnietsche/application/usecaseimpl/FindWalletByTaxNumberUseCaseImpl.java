@@ -4,6 +4,7 @@ import br.com.cnietsche.application.gateway.FindWalletByTaxNumberGateway;
 import br.com.cnietsche.core.domain.TaxNumber;
 import br.com.cnietsche.core.domain.Wallet;
 import br.com.cnietsche.core.exception.NotFoundException;
+import br.com.cnietsche.core.exception.TaxNumberException;
 import br.com.cnietsche.core.exception.enums.ErrorCodeEnum;
 import br.com.cnietsche.usecase.FindWalletByTaxNumberUseCase;
 
@@ -18,7 +19,7 @@ public class FindWalletByTaxNumberUseCaseImpl implements FindWalletByTaxNumberUs
     }
 
     @Override
-    public Wallet findByTaxNumber(TaxNumber taxNumber) throws NotFoundException {
+    public Wallet findByTaxNumber(TaxNumber taxNumber) throws NotFoundException, TaxNumberException {
         var wallet = findWalletByTaxNumberGateway.findByTaxNumber(taxNumber);
         if (Objects.isNull(wallet)) {
             throw new NotFoundException(ErrorCodeEnum.WA0001.getMessage(), ErrorCodeEnum.WA0001.getCode());
